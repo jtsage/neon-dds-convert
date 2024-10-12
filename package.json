@@ -1,7 +1,7 @@
 {
   "name": "neon-dds-convert",
-  "version": "0.1.1",
-  "description": "DDS conversion to WEBP",
+  "version": "0.1.2",
+  "description": "DDS conversion to PNG",
   "main": "index.node",
   "scripts": {
     "test": "cargo test",

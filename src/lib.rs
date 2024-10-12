@@ -5,8 +5,8 @@ use neon::types::buffer::TypedArray;
 use image::{imageops::FilterType, DynamicImage, ImageFormat};
 use base64::{Engine as _, engine::general_purpose};
 
-// static IMAGE_FORMAT: ImageFormat = image::ImageFormat::Png;
-static IMAGE_FORMAT: ImageFormat = image::ImageFormat::WebP;
+static IMAGE_FORMAT: ImageFormat = image::ImageFormat::Png;
+// static IMAGE_FORMAT: ImageFormat = image::ImageFormat::WebP;
 
 fn convert_dds(mut cx: FunctionContext) -> JsResult<JsString> {
     let buffer = cx.argument::<JsArrayBuffer>(0)?;
@@ -38,7 +38,7 @@ fn convert_dds(mut cx: FunctionContext) -> JsResult<JsString> {
         if result.is_ok() {
             let b64 = general_purpose::STANDARD.encode(output_cursor.into_inner());
 
-            Ok(cx.string(format!("data:image/webp;base64, {b64}")))
+            Ok(cx.string(format!("data:image/png;base64, {b64}")))
         } else {
             Ok(cx.string(""))
         }
