@@ -3,7 +3,7 @@ use webp::*;
 use neon::prelude::*;
 use image_dds::ddsfile;
 use neon::types::buffer::TypedArray;
-use image::{imageops::FilterType, DynamicImage, ImageFormat};
+use image::{imageops::FilterType, DynamicImage};
 use base64::{Engine as _, engine::general_purpose};
 
 fn convert_dds(mut cx: FunctionContext) -> JsResult<JsString> {

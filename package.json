@@ -1,6 +1,6 @@
 {
   "name": "neon-dds-convert",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "DDS conversion to WEBP",
   "main": "index.node",
   "scripts": {

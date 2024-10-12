@@ -4,6 +4,8 @@
 
 This project was bootstrapped by [create-neon](https://www.npmjs.com/package/create-neon).
 
+This project is specifically for use with [FSG Mod Assistant](https://github.com/FSGModding/FSG_Mod_Assistant), thus the API and options available are very, very limited.
+
 ## Building neon-dds-convert
 
 Building neon-dds-convert requires a [supported version of Node and Rust](https://github.com/neon-bindings/neon#platform-support).
@@ -16,17 +18,11 @@ $ npm run build
 
 This command uses the [@neon-rs/cli](https://www.npmjs.com/package/@neon-rs/cli) utility to assemble the binary Node addon from the output of `cargo`.
 
-## Exploring neon-dds-convert
+## neon-dds-convert API
 
-After building neon-dds-convert, you can explore its exports at the Node console:
+This exports a single function called `convert_dds`, accepting 2 arguments.  The first is an ArrayBuffer of the DDS file contents, the second is the maximum size (in pixels) of the image.  Images smaller than this number will not be resized.  This tool assumes square images.
 
-```sh
-$ npm i
-$ npm run build
-$ node
-> require('.').hello()
-'hello node'
-```
+Return value is a base64 string suitable for direct embed as an `<img src="...">`.  Quality is locked to `75`
 
 ## Available Scripts
 
