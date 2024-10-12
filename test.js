@@ -11,6 +11,7 @@ const files = [
 for ( const file of files ) {
 	const fileContent = fs.readFileSync(file)
 	const start = new Date().getTime()
-	const _ = lib.convert_dds(fileContent.buffer, 1024)
-	console.log('File:', path.basename(file), 'Time:', (new Date()).getTime() - start, 'ms')
+	const content = lib.convert_dds(fileContent.buffer, 1024)
+	console.log('File:', path.basename(file), 'Time:', (new Date()).getTime() - start, 'ms', 'Size:', content.length)
+	// console.log(content)
 }
